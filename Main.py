@@ -2,7 +2,10 @@ import re
 from datetime import datetime
 import long_responses as long
 import mysql.connector
- 
+
+
+# Data base connection
+
 mydb = mysql.connector.connect(
     host = "localhost",
     user = "root",
@@ -101,7 +104,7 @@ def check_all_messages(message):
     response('See you!', ['bye', 'goodbye'], single_response=True)
     response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
     response('You\'re welcome!', ['thank', 'thanks'], single_response=True)
-    response('Thank you!', ['i', 'love', 'code', 'palace'], required_words=['code', 'palace'])
+    response('Thank you!', ['i', 'love', 'code', 'to', 'code'], required_words=['love','code'])
     
     response('See you Brother', ['done'], single_response=True)
     response('Okay you want Leave application',['leave','application'],single_response=True)
@@ -193,7 +196,10 @@ def init():
     
     with open(file_name, 'w') as file:
         name = input('Bot: Enter your name: ')
-        file.write(f'Hello {name}!\nHow are you?')    
+        file.write(f'Hello {name}!\nHow are you?')   
+
+
+# To add function for voice module 
 
 # date checking is valid or not
 
